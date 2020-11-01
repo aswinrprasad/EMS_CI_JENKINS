@@ -1,0 +1,15 @@
+<div id="divTable" class="container">
+    <table *ngIf="getEmpListFromDb() != 0;else errorMsg" class="table" style="width:100%">
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee Salary</th>
+        </tr>
+        <tr *ngFor="let e of empList">
+            <td>{{e.id}}</td>
+            <td>{{e.eName}}</td>
+            <td>{{e.salary}}</td>
+        </tr>
+    </table>
+    <ng-template #errorMsg><p style="color:red;"><b>No Records Found</b></p></ng-template>
+</div>

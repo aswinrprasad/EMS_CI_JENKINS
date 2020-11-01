@@ -1,0 +1,6 @@
+<form #frmDel="ngForm" (ngSubmit)="deleteEmployee(frmDel.value.id)">
+    <b class='inputInfo'>Employee ID</b>  
+    <input id='eId' name='id' type='text' ngModel pattern="[0-9]+" required><br><br>
+    <input id='del' class='btn btn-success btn-lg' type='submit' value='Delete' [disabled]="frmDel.invalid">
+</form>
+<p style="color:red;"><b>{{msg}}</b></p>

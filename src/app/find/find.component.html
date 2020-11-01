@@ -1,0 +1,23 @@
+<form #frmFind = "ngForm" (submit)="findEmployee(frmFind.value)">
+    <b class='inputInfo'>Employee ID</b>  
+    <input name='id' type='text' ngModel pattern="[0-9]+" required><br><br>
+    <input class='btn btn-success btn-lg' type='submit' value='Find' [disabled]="frmFind.invalid">
+</form>
+
+
+<div id="divTable" class="container">
+    <table *ngIf="emp != null" class="table" style="width:100%">
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee Salary</th>
+        </tr>
+        <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.eName}}</td>
+            <td>{{emp.salary}}</td>
+        </tr>
+    </table>
+    <p style="color:red;"><b>{{msg}}</b></p>
+    <!--<ng-template #errorMsg><p style="color:red;"><b>No Records Found</b></p></ng-template>-->
+</div>

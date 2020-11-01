@@ -1,0 +1,7 @@
+<form #frmUpdate="ngForm" (ngSubmit)="updateEmployee(frmUpdate.value)">
+    <b class='inputInfo'>Employee ID</b>  <input name='id' type='text' ngModel pattern="[0-9]+" required><br><br>
+    <b class='inputInfo'>Employee Name</b>  <input name='eName' type='text' ngModel pattern="[A-Z][a-zA-Z]+" required><br><br>
+    <b class='inputInfo'>Employee Salary</b>  <input name='salary' type='text' ngModel pattern="[0-9]+" required><br><br>
+    <input id='ins' class='btn btn-success btn-lg' type='submit' value='Update' [disabled]="frmUpdate.invalid">
+</form>
+<p style="color:red;"><b>{{ msg }}</b></p>
